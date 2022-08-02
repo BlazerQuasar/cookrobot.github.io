@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+	<style>
+        .btn-danger {
+            color: #fff;
+            background: #f03 linear-gradient(180deg, #ff2652, #f03) repeat-x;
+            border-color: #f03;
+            box-shadow: none;
+        }
+
+
+	</style>
+	<div class="container">
+		<div style="margin-bottom: 10px">
+		</div>
+		<h1>My favorite</h1>
+		<table class="table">
+
+			<caption>
+				<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+				My Favorite
+			</caption>
+			<thead>
+			<tr class="success">
+
+				<th><h3>Picture</h3></th>
+				<th><h3>Name</h3></th>
+
+				<th><h3>description</h3></th>
+				<th><h3>rate</h3></th>
+				<th><h3>calories</h3></th>
+
+
+				<th><h3>Operation</h3></th>
+			</tr>
+			</thead>
+			<tbody>
+			{% for obj in queryset2 %}
+				<tr uid="{{ obj.id }}" class="success">
+					<td>
+						<img src="/media/{{ obj.img }}" style="height: 200px">
+					</td>
+
+					<td><h4>{{ obj.name }}</h4></td>
+
+					<td><h4>{{ obj.description }}</h4></td>
+					<td><h4>{{ obj.get_rate_display }}</h4></td>
+					<td><h4>{{ obj.calories }}</h4></td>
+					<td>
+						<form style="padding-top: 4px;" action="/meun/{{ obj.id }}/list2/" method="POST">
+							{% csrf_token %}
+							Quantity:
+							<input  type="text" name="tools" style="width:80px; height: 34px ; border: 3px solid skyblue" value="{{ obj.quan }}">
+							<input class="btn btn-success" style="width: 80px" role="button" type="submit" value="Start"/>
+							<a class="btn btn-danger" style="width: 80px" href="/meun/{{ obj.id }}/delete/">Remove</a>
+						</form>
+					</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+		<ul class="pagination">
+			{{ page_string }}
+		</ul>
+
+
+	</div>
+{% endblock %}

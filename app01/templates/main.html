@@ -1,0 +1,388 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+	{% load static %}
+	<style>
+        .thumbnail {
+            width: 100%;
+            padding: 2px;
+            margin-bottom: 20px;
+            background-color: #e8e8e8;
+            border: 18px solid honeydew;
+            height: 530px;
+        }
+
+        .sub-header a {
+            float: left;
+            width: 100px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .container .w {
+            background-color: #fff;
+        }
+
+        .w {
+            width: 1170px;
+            height: 400px;
+            margin-left: -15px;
+        }
+
+
+        .sub-header a img {
+            width: 60px;
+            height: 60px;
+
+            margin: 0 auto 5px;
+            border-radius: 50%;
+        }
+
+
+        .sub-header {
+            margin-top: 20px;
+            margin-left: 80px;
+            width: 1170px;
+
+        }
+
+        .row {
+            position: relative;
+            padding-top: 15px;
+            margin-left: 5px;
+        }
+
+        .item img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .carousel-inner {
+            height: 200px;
+            width: 1170px;
+        }
+
+        .four4 a {
+            float: right;
+        }
+
+        .item1 img {
+            width: 400px;
+            height: 200px;
+        }
+
+
+        .caption {
+            height: 150px;
+        }
+
+        .avatar {
+            color: #fff;
+            background-color: #adb5bd;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;
+            float: right;
+        }
+
+        .bg-red {
+            background-color: #f03 !important;
+        }
+
+        .sub-header1 {
+            width: 1170px;
+            height: 50px;
+        }
+
+        .sub-header3 a {
+            width: 124px;
+            margin-left: 15px;
+        }
+
+        .sub-header3 {
+            margin-left: 75px;
+            margin-top: 70px;
+        }
+
+        .bs-example {
+            width: 1170px;
+            margin-left: 0px;
+
+        }
+
+        .sider {
+            min-height: calc(100vh - 60px);
+            background: #ffffff;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            padding: 0;
+            width: 257px;
+
+
+            border-right: 2px solid #e3e3e3;
+            border-bottom: 2px solid #e3e3e3;
+        }
+
+        .nav-item {
+            border-bottom: 2px solid #e3e3e3;
+            margin-top: 50px;
+        }
+
+        .text-white {
+            color: #fff !important;
+        }
+
+
+	</style>
+
+
+	{#		<div class="list-group " style="float: right; width: 300px">#}
+	{#			<a href="/meun/main/add/"  class="list-group-item list-group-item-success">Create recipe</a>#}
+	{#			<a href="#" class="list-group-item list-group-item-info">*********</a>#}
+	{#			<a href="#" class="list-group-item list-group-item-warning">*********</a>#}
+	{#			<a href="#" class="list-group-item list-group-item-danger">*********</a>#}
+	{#			<img style="width: 300px; height: 165px" src="{% static 'img/img_2.png' %}">#}
+	{#			<img style="width: 300px; height: 165px" src="{% static 'img/img_5.png' %}">#}
+	{#		</div>#}
+
+
+	<div class="sider" style="float: left">
+		<ul class="nav">
+			<li class="nav-item" style="margin-top: 1px">
+				<a style="background-color: #44c553 !important; " href="/meun/main/add/" class="list-group-item list-group-item-success"><h3 class="text-white">Create recipe</h3></a>
+			</li>
+			<li class="nav-item">
+				<a style="background-color: #7832e2 !important; " href="/meun/main/add/"
+				   class="list-group-item list-group-item-info"><h3 class="text-white">Create recipe</h3></a>
+
+			</li>
+			<li class="nav-item">
+				<a style="background-color: #35bdff !important; " href="/meun/main/add/" class="list-group-item list-group-item-danger"><h3 class="text-white">Create recipe</h3></a>
+
+			</li>
+			<li class="nav-item">
+				<a style="background-color:#000; " href="/meun/main/add/" class="list-group-item list-group-item-warning"><h3 class="text-white">Create recipe</h3></a>
+
+			</li>
+			<li class="nav-item active">
+				<a style="background-color: #ffde03 !important; href="/meun/main/add/" class="list-group-item list-group-item-primary"><h3 class="text-white">Create recipe</h3></a>
+
+			</li>
+			<li class="nav-item">
+				<a style="background-color: #ff5916 !important; " href="/meun/main/add/" class="list-group-item list-group-item-success"><h3 class="text-white">Create recipe</h3></a>
+
+			</li>
+
+		</ul>
+	</div>
+
+
+
+
+	<div class="container" style="margin-right: 0px; margin-top: -20px; background-color: #f3f3f3">
+
+
+		<div class="w clear">
+			<div id="carousel-example-generic" style="width: 1170px; height: 500px;" class="carousel slide"
+			     data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+					<li data-target="#carousel-example-generic" data-slide-to="2" class="active"></li>
+				</ol>
+				<div class="carousel-inner" style="width: 1170px; height: 500px;" role="listbox">
+					<div style="width: 1170px; height: 500px;" class="item">
+						<a href="/det_lun1/">
+							<img style="width: 1170px; height: 500px;"
+							     data-src="holder.js/1000x500/auto/#777:#555/text:First slide"
+							     alt="First slide [1000x500]"
+							     src="{% static 'img/gheymeh.jpeg' %}"
+							     data-holder-rendered="true">
+						</a>
+					</div>
+					<div class="item active left">
+						<a href="/det_lun2/">
+							<img style="width: 1170px; height: 500px;"
+							     data-src="holder.js/900x500/auto/#666:#444/text:Second slide"
+							     alt="Second slide [1000x500]"
+							     src="{% static 'img/chicken-gyoza.jpeg' %}"
+							     data-holder-rendered="true">
+						</a>
+					</div>
+					<div class="item next left">
+						<a href="/det_lun3/">
+							<img style="width: 1170px; height: 500px;"
+							     data-src="holder.js/1000x500/auto/#555:#333/text:Third slide"
+							     alt="Third slide [1000x500]"
+							     src="{% static 'img/Quesadilla.jpeg' %}"
+							     data-holder-rendered="true">
+						</a>
+					</div>
+				</div>
+				<a class="left carousel-control" href="#carousel-example-generic" role="button"
+				   data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#carousel-example-generic" role="button"
+				   data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+
+		</div>
+
+
+		<div class="ad" style=" width: 1170px; height: 100px; margin-top: 110px; margin-left: -15px ">
+			<img style="width: 1170px; height: 100px; " src="{% static 'img/img_5.png' %}">
+		</div>
+		<div class="ad" style=" width: 1170px; height: 100px; margin-left: -15px; margin-top: 10px; ">
+			<img style="width: 1170px; height: 100px; " src="{% static 'img/img_6.png' %}">
+		</div>
+		<div class="sub-header1">
+			<div class="sub-header">
+				<a href="/subpage1/" target="_blank" title="一周最热">
+					<img class="imgLoad" src="//static.meishichina.com/v6/img/zhen/r01.jpg" style="display: block;">
+					Most popular
+				</a>
+				<a href="/subpage2/" target="_blank"
+				   title="人气菜肴">
+					<img class="imgLoad" src="//static.meishichina.com/v6/img/zhen/r02.jpg" style="display: block;">
+					Best taste
+				</a>
+				<a href="/subpage3/" target="_blank" title="春季食谱">
+					<img class="imgLoad" src="//static.meishichina.com/v6/img/zhen/cjsp.png"
+					     style="display: block;">
+					Vegetarianism
+				</a>
+				<a href="/subpage4/" target="_blank" title="高颜值">
+					<img class="imgLoad" src="//static.meishichina.com/v6/img/zhen/r04.jpg" style="display: block;">
+					Gorgeous
+				</a>
+				<a href="/subpage5/" target="_blank" title="快手菜">
+					<img class="imgLoad" src="//static.meishichina.com/v6/img/zhen/r05.jpg" style="display: block;">
+					Fast speed
+				</a>
+				<a href="/subpage6/" target="_blank" title="早餐">
+					<img class="imgLoad" src="//static.meishichina.com/v6/img/zhen/r06.jpg" style="display: block;">
+					Breakfast
+				</a>
+				<a href="/subpage7/" target="_blank" title="家常菜谱">
+					<img class="imgLoad" src="//static.meishichina.com/v6/img/zhen/r07.jpg" style="display: block;">
+					Homely recipes
+				</a>
+				<a href="/subpage8/" target="_blank" title="烘焙大全">
+					<img class="imgLoad" src="//static.meishichina.com/v6/img/zhen/r08.jpg" style="display: block;">
+					Baking
+				</a>
+				<a href="/subpage9/" target="_blank" title="亲子专区">
+					<img class="imgLoad" src="//static.meishichina.com/v6/img/zhen/r09.jpg" style="display: block;">
+					Children's food
+				</a>
+				<a href="/meun/list/" target="_blank" title="所有菜谱">
+					<img class="imgLoad" src="//static.meishichina.com/v6/img/zhen/r10.jpg" style="display: block;">
+					All menu
+				</a>
+
+			</div>
+		</div>
+		<div class="sub-header2">
+			<div class="sub-header3">
+				<a href="/meun/list/" target="_blank" class="btn btn-success"><h5>Recommend</h5></a>
+				<a href="/subpage11/" target="_blank" class="btn btn-info"><h5>Staple Food</h5></a>
+				<a href="/subpage12/" target="_blank" class="btn btn-warning"><h5>Dessert</h5></a>
+				<a href="/subpage13/" target="_blank" class="btn btn-danger"><h5>Snack</h5></a>
+				<a href="/subpage5/" target="_blank" class="btn btn-warning"><h5>Fast Food</h5></a>
+				<a href="/subpage14/" target="_blank" class="btn btn-success"><h5>Western Food</h5></a>
+				<a href="/category/list/" target="_blank" class="btn btn-info"><h5>All Categories</h5></a>
+			</div>
+		</div>
+
+		<div class="bs-example" data-example-id="thumbnails-with-custom-content">
+			<div class="row">
+				<div class="row1">
+					{% for obj in queryset %}
+						<div class="col-sm-6 col-md-4">
+							<div class="thumbnail">
+								<img style="width: 290px ;height:290px" src="/media/{{ obj.img }}"
+								     data-src="holder.js/100%x200" alt="100%x200">
+								<div class="caption" id="formAdd">
+									<span class="avatar bg-red mr-3">
+										<a id="btnSave" href="/meun/{{ obj.id }}/list/" style="color: white">
+											<svg class="svg-inline--fa fa-heart fa-w-18"
+											     style="width: 18px; height: 18px"
+											     aria-hidden="true" data-prefix="fas"
+											     data-icon="heart" role="img"
+											     viewBox="0 0 576 512">
+
+														<path fill="currentColor"
+														      d="M414.9 24C361.8 24 312 65.7 288 89.3 264 65.7 214.2 24 161.1 24 70.3 24 16 76.9 16 165.5c0 72.6 66.8 133.3 69.2 135.4l187 180.8c8.8 8.5 22.8 8.5 31.6 0l186.7-180.2c2.7-2.7 69.5-63.5 69.5-136C560 76.9 505.7 24 414.9 24z">
+														</path>
+												</svg>
+											</a>
+									</span>
+									<h2>{{ obj.name }}</h2>
+									<h5>Category: {{ obj.get_cate_display }}</h5>
+									<h5>Description: {{ obj.description }}</h5>
+									<h5>Comment: {{ obj.get_rate_display }}</h5>
+									<h5>Calories: {{ obj.calories }} kal</h5>
+
+
+									<div style="float: right; margin-top: -50px">
+										<form action="/meun/{{ obj.id }}/det/" method="POST">
+											{% csrf_token %}
+											<p>Quantity: <input type="text" name="tools"
+											                    style="width: 40px; border: 2px solid greenyellow"
+											                    value="{{ obj.quan }}"></p>
+
+											<input style="width: 100px" class="btn btn-success" role="button"
+											       type="submit" value="Start!!!"/>
+										</form>
+
+									</div>
+
+
+								</div>
+
+							</div>
+						</div>
+					{% endfor %}
+
+				</div>
+			</div>
+			<ul class="pagination">
+				{{ page_string }}
+			</ul>
+		</div>
+	</div>
+
+{% endblock %}
+{% block js %}
+	<script>
+        $(function () {
+            bindBtnSaveEvent();
+
+        })
+
+        function bindBtnSaveEvent() {
+            $("#btnSave").click(function () {
+                alert("Save Successfully in my favorite");
+
+
+            });
+        }
+
+
+	</script>
+
+
+
+{% endblock %}
+

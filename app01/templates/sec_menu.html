@@ -1,0 +1,116 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+	<style>
+        .particulars {
+            border-radius: 10px;
+            border: 3px solid powderblue;
+            padding: 10px 10px 40px 10px;
+            margin: 40px 20px 20px 0;
+            width: 720px;
+        }
+
+        .particulars legend {
+            display: block;
+            width: 100%;
+            padding-left: 3px;
+            margin-bottom: 20px;
+            font-size: 25px;
+            line-height: inherit;
+            color: #333;
+            border-bottom: 3px solid powderblue;
+        }
+
+        .one img {
+            width: 400px;
+            height: 400px;
+        }
+	</style>
+	<div class="list-group" style="float: right; width: 300px">
+		<a href="/meun/main/add/" class="list-group-item list-group-item-success">Create recipe</a>
+		<a href="#" class="list-group-item list-group-item-info">*********</a>
+		<a href="#" class="list-group-item list-group-item-warning">*********</a>
+		<a href="#" class="list-group-item list-group-item-danger">*********</a>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9">
+
+				{% for obj in queryset %}
+					<div class="alert alert-success"><h2>{{ obj.name }} </h2>
+					</div>
+					<div>
+						<h3>Serving size: For {{ tools}} person</h3>
+						<form action="/meun/{{ obj.id }}/det/" method="POST">
+							<h3>Bigger size: <input  type="text" name="tools" style="width: 100px;  border: 2px solid skyblue" value=""></h3>
+							{% csrf_token %}
+							<a href="#"><input style="float: right; width: 100px; margin-top: -43px; margin-right: 500px" id = 'textUser' class="btn btn-success" role="button" type="submit" value="Start!"/></a>
+						</form>
+					</div>
+					<div class="one">
+						<img src="/media/{{ obj.img }}">
+					</div>
+					<fieldset class="particulars">
+						<legend style="color: saddlebrown">The Quantity</legend>
+						<h3> {% widthratio obj.quan 1 tools %} </h3>
+					</fieldset>
+					<fieldset class="particulars">
+						<legend style="color: saddlebrown">The utensils are need</legend>
+						<h3>{{ obj.utensils }}*{{ tools }}</h3>
+					</fieldset>
+					<fieldset class="particulars">
+						<legend style="color: saddlebrown">Ingredients</legend>
+						<h3>{{ obj.meat }}*{{ tools }}</h3>
+						<h3>{{ obj.veg }}*{{ tools }}</h3>
+						<h3>{{ obj.auxiliary }}*{{ tools }}</h3>
+					</fieldset>
+					<fieldset class="particulars">
+						<legend style="color: saddlebrown">Temperature</legend>
+						<div class="recipeCategory_sub_R clear" style="margin: 0; padding: 0">
+							<h3>{{ obj.temperature }} ℃</h3>
+						</div>
+					</fieldset>
+					<fieldset class="particulars">
+						<legend style="color: saddlebrown">Cooking time</legend>
+						<div class="recipeCategory_sub_R clear" style="margin: 0; padding: 0">
+							<h3>{% widthratio obj.time 1 tools %} min</h3>
+						</div>
+					</fieldset>
+					<fieldset class="particulars">
+						<legend style="color: saddlebrown"><h3>Steps to cook this</h3></legend>
+						<div class="two">
+							<h3>{{ obj.steps }}</h3>
+						</div>
+
+					</fieldset>
+					<fieldset class="particulars">
+						<legend style="color: saddlebrown"><h3>Recommendation Rate</h3></legend>
+						<div class="two">
+							<h3>{{ obj.rate }} stars</h3>
+						</div>
+
+					</fieldset>
+					<fieldset class="particulars">
+						<legend style="color: saddlebrown"><h3>Calories</h3></legend>
+						<div class="two">
+
+							<h3> {% widthratio obj.calories 1 tools %} Cal </h3>
+						</div>
+					</fieldset>
+				{% endfor %}
+
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{#<script>#}
+{##}
+{#	function getInfo(){#}
+{#		//1.获取用户名和密码的值#}
+{#		var username1 = $("#textUser").val();#}
+{##}
+{##}
+{#		$("#view").append(newli)#}
+{#	}#}
+{##}
+{#</script>#}

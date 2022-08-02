@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+	{% load static %}
+	<style>
+        .panel-body {
+            padding: 5px;
+        }
+
+        .panel-body img {
+            width: 160px;
+            height: 160px;
+        }
+
+        .text {
+            float: right;
+            padding-right: 500px;
+        }
+	</style>
+	<div class="container">
+		{% for obj in queryset %}
+			<h1 style="color: #985f0d">{{ obj.get_cate_display}}</h1>
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h3 class="panel-title"><h3>{{ obj.name }}</h3></h3>
+				</div>
+				<div class="panel-body">
+					<img src="/media/{{ obj.img }}">
+					<div class="text">
+						<h3>Description：{{ obj.description }}</h3>
+						<h3>Score：{{ obj.get_rate_display }}</h3>
+					</div>
+
+				</div>
+			</div>
+		{% endfor %}
+
+	</div>
+
+
+
+{% endblock %}

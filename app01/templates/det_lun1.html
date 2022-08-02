@@ -1,0 +1,271 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+	{% load static %}
+	<style>
+
+        .col-md-8 {
+		{#border: solid 1px red;#}
+        }
+
+        .col-md-4 {
+		{#border: solid 1px red;#}
+
+        }
+
+        .particulars {
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            padding: 0 0 10px 0;
+            margin: 0 0 15px 0;
+            width: 720px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .particulars .recipeCategory_sub_R ul {
+            border: none;
+        }
+
+        .recipeCategory_sub_R ul {
+            display: block;
+            float: left;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        .recipeCategory_sub_R li {
+            float: left;
+            width: 159px;
+            text-align: center;
+            height: 70px;
+            position: relative;
+        }
+
+        .recipeCategory_sub_R li .category_s1 {
+            display: block;
+            font-size: 20px;
+            width: 100%;
+            height: 40px;
+            line-height: 45px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #666;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .four {
+            width: 400px;
+            height: 200px;
+        }
+
+        .four a {
+
+            float: left;
+            width: 80px;
+            border: 1px solid wheat;
+            margin: 10px 10px 0 0;
+            text-align: center;
+            font-size: 16px;
+            height: 34px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .six a {
+            float: left;
+            width: 80px;
+            border: 1px solid wheat;
+            margin: 10px 10px 0 0;
+            text-align: center;
+            font-size: 16px;
+            height: 34px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .three {
+            margin-top: 70px;
+        }
+
+        .eight a {
+            float: left;
+            width: 80px;
+            border: 1px solid wheat;
+            margin: 10px 10px 0 0;
+            text-align: center;
+            font-size: 16px;
+            height: 34px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+
+	</style>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="alert alert-danger" role="alert"><h2>The wonderful pizza</h2></div>
+				<div class="one">
+					<img style="width: 400px; height:400px;" src="{% static 'img/gheymeh.jpeg' %}">
+				</div>
+				<div class="text-left">
+					<h3>The detail of food</h3>
+				</div>
+				<fieldset class="particulars">
+					<legend style="color: saddlebrown">Main ingredient</legend>
+					<div class="recipeCategory_sub_R clear" style="margin: 0; padding: 0">
+						<ul>
+							<li>
+								<span class="category_s1">
+									<p>Pizza pieces</p>
+								</span>
+								<span class="category_s2">one</span>
+							</li>
+							<li>
+								<span class="category_s1">
+									<p>Eggs</p>
+								</span>
+								<span class="category_s2">four or five</span>
+							</li>
+						</ul>
+					</div>
+				</fieldset>
+				<fieldset class="particulars">
+					<legend style="color: saddlebrown">Flavour</legend>
+					<div class="recipeCategory_sub_R clear" style="margin: 0; padding: 0">
+						<ul>
+							<li>
+								<span class="category_s1">
+									<a href="https://www.meishichina.com/YuanLiao/JiTui/" title="大鸡腿的做法"
+									   target="_blank"><b>Pizza piece</b></a>
+								</span>
+								<span class="category_s2">one</span>
+							</li>
+						</ul>
+					</div>
+				</fieldset>
+				<fieldset class="particulars">
+					<legend style="color: saddlebrown">Temperature</legend>
+					<div class="recipeCategory_sub_R clear" style="margin: 0; padding: 0">
+						<ul>
+							<li>
+								<span class="category_s1">
+									<a href="https://www.meishichina.com/YuanLiao/JiTui/" title="大鸡腿的做法"
+									   target="_blank"><b>Pizza piece</b></a>
+								</span>
+								<span class="category_s2">one</span>
+							</li>
+						</ul>
+					</div>
+				</fieldset>
+				<fieldset class="particulars">
+					<legend style="color: saddlebrown">Description</legend>
+					<div class="recipeCategory_sub_R clear" style="margin: 0; padding: 0">
+						<ul>
+							<li>
+								<span class="category_s1">
+									<a href="https://www.meishichina.com/YuanLiao/JiTui/" title="大鸡腿的做法"
+									   target="_blank"><b>Pizza piece</b></a>
+								</span>
+								<span class="category_s2">one</span>
+							</li>
+						</ul>
+					</div>
+				</fieldset>
+				<fieldset class="particulars">
+					<legend style="color: saddlebrown"><h3>Steps to cook this</h3></legend>
+					<div class="two">
+						<ol>
+							<li><h4>1.We have bacon, pancakes, green peppers,eggs</h4></li>
+							<li><h4>2.Spread out the flatbread, sprinkle with butter, pepper and bacon</h4></li>
+							<li><h4>3.Wait around 10 minutes</h4></li>
+
+						</ol>
+					</div>
+
+				</fieldset>
+			</div>
+			<div class="col-md-4">
+				<div class="three">
+					<div class="alert alert-success" role="alert">
+						<a href="#" class="alert-link"><h3>Popular recipe</h3></a>
+					</div>
+				</div>
+				<div class="four">
+					<a>chicken</a>
+					<a>beef</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+				</div>
+				<div class="five">
+					<div class="alert alert-danger" role="alert">
+						<a href="#" class="alert-link"><h3>Popular Ingredients</h3></a>
+					</div>
+				</div>
+				<div class="six" style="height: 200px">
+					<a>chicken</a>
+					<a>beef</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+				</div>
+				<div class="seven">
+					<div class="alert alert-info" role="alert">
+						<a href="#" class="alert-link"><h3>Popular fast food</h3></a>
+					</div>
+				</div>
+				<div class="eight">
+					<a>chicken</a>
+					<a>beef</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+					<a>lamb</a>
+				</div>
+
+			</div>
+
+		</div>
+
+
+	</div>
+
+
+{% endblock %}
